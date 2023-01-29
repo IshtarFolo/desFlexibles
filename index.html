@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TIM-2W2 - Exercice 1</title>
+	<link rel="icon" type="image/ico" href="favicon.ico" sizes="16x16">
+
+	<!-- Intégration de la police de caractères Web -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+
+	<!-- Intégration des styles -->
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<header id="haut-de-page">
+		<img src="images/logo_1.jpg" alt="Logo représentant l'image d'un dé" title="Cliquez pour changer le logo ;-)">
+		<h1>Jouons avec des DÉS flexibles!!!</h1>
+	</header>
+
+	<nav>
+		<a href="#de1">Dé no 1</a>
+		<a href="#de2">Dé no 2</a>
+		<a href="#de3">Dé no 3</a>
+		<a href="#de4">Dé no 4</a>
+		<a href="#de5">Dé no 5</a>
+		<a href="#de6">Dé no 6</a>
+	</nav>
+
+	<section id="de1">
+		<div class="face-de face1">
+			<div class="point"></div>
+		</div>
+	</section>
+
+	<section id="de2">
+		<div class="face-de face2">
+			<div class="point"></div>
+			<div class="point"></div>
+		</div>
+	</section>
+
+	<section id="de3">
+		<div class="face-de face3">
+			<div class="point"></div>
+			<div class="point"></div>
+			<div class="point"></div>
+		</div>
+	</section>
+
+	<section id="de4">
+		<div class="face-de face4">
+			<div class="colonne-points">
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>
+			<div class="colonne-points">
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>
+		</div>
+
+	</section>
+
+	<section id="de5">
+		<div class="face-de face5">
+			<div class="colonne-points">
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>
+			<div class="colonne-points">
+				<div class="point"></div>
+			</div>
+			<div class="colonne-points">
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>
+		</div>
+
+	</section>
+
+	<section id="de6">
+		<div class="face-de face6">
+			<div class="colonne-points">
+				<div class="point"></div>
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>
+			<div class="colonne-points">
+				<div class="point"></div>
+				<div class="point"></div>
+				<div class="point"></div>
+			</div>
+		</div>
+	</section>
+
+	<footer><p>Cliquez sur l'image du logo pour changer son image</p></footer>
+
+	<div class="fleche-haut">
+		<a href="#haut-de-page" title="Défiler vers le haut de la page">&#8683;</a>
+	</div>
+
+	<script>
+		/*
+			[Étape 9 : 	JavaScript]
+			Produisez le code JavaScript adéquat pour gérer l'événement "clic" 
+			sur l'image du logo de la page (que vous voyez en haut de page).
+			
+			Lorsque cet élément est cliqué, vous voulez modifier la source de 
+			l'image pour choisir la prochaine image disponible dans le dossier
+			"images" ("logo_1.jpg", "logo_2.jpg", et ainsi de suite.)
+			
+			Utilisez une combinaison d'accès aux éléments du DOM (querySelector),
+			gestionnaire d'événements (addEventListener), et accès aux attributs
+			d'un élément de la page pour modifier l'image.
+
+			Suggestion : pensez à votre "algorithme" et structurez votre code 
+			en écrivant des commentaires pour les étapes requises avant de 
+			commencer à "coder".
+    	*/
+		
+		//Je détermine l'élément image à modifier
+		const logo = document.querySelector('body > header > img');
+
+		//Je crée un écouteur d'évènement
+		logo.addEventListener('click', modifierImage);
+
+		//la fonction
+		function modifierImage(){
+			//Le chiffre au hasard qui servira à choisir l'image à afficher
+			const noImage = Math.ceil(1+Math.random()*4);
+
+			//Le lien pour accéder à l'image en question dans le dossier "images"
+			logo.src= 'images/logo_' + noImage + '.jpg';
+
+		}
+
+		
+
+
+	</script>
+</body>
+</html>
